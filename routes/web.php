@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index');
+Route::get('/bo/dashboard', 'DashboardController@index');
+
+/* products routes */
+Route::resource('/bo/products', 'ProductController');
+
+/* plaform routes */
+route::resource('/bo/platforms', 'PlatformController');
 
 Route::get('/home', 'HomeController@index')->name('home');
